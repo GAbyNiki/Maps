@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculateur</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4UaUIx1tAYGOGUWPElHs0tQ4x7PNjYGI&libraries=places"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:400,500"
+  rel="stylesheet"
+/>
+
+<link rel="stylesheet" type="text/css" href="/static/css/styles.css" />
+<script type="module" src="/static/js/index.js"></script>
+
+
+</head>
+  
+<body>
+
+<!-- Note: The address components in this sample are based on North American address format. You might need to adjust them for the locations relevant to your app. For more information, see
+https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
+    -->
+
+    <div style="display: none">
+      <input
+        id="origin-input"
+        class="controls"
+        type="text"
+        placeholder="Enter an origin location"
+      />
+
+      <input
+        id="destination-input"
+        class="controls"
+        type="text"
+        placeholder="Enter a destination location"
+      />
+
+      <div id="mode-selector" class="controls">
+        <input
+          type="radio"
+          name="type"
+          id="changemode-walking"
+          checked="checked"
+        />
+        <label for="changemode-walking">Walking</label>
+
+        <input type="radio" name="type" id="changemode-transit" />
+        <label for="changemode-transit">Transit</label>
+
+        <input type="radio" name="type" id="changemode-driving" />
+        <label for="changemode-driving">Driving</label>
+      </div>
+    </div>
+
+
+
+    <h1>Calculateur</h1>
+    <form method="POST" action="/calculate">
+        <label for="vitesseMoyenne">Vitesse Moyenne en km/h:</label>
+        <input type="number" name="vitesseMoyenne" required><br><br>
+
+        <label for="distance">Distance: en km</label>
+        <input type="number" name="distance" required><br><br>
+
+        <label for="nbDeBorne">Nombre de Borne:</label>
+        <input type="number" name="nbDeBorne" required><br><br>
+
+        <label for="tempsDeCharge">Temps de Charge en min:</label>
+        <input type="number" name="tempsDeCharge" required><br><br>
+
+        <input type="submit" value="Calculer">
+    </form>
+
+
+
+    <!-- Élément pour afficher la carte -->
+    <div id="map" ></div>
+
+</body>
+</html>
+
