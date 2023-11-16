@@ -89,11 +89,7 @@ def calculate():
     distance = data.get('distance')
     vehicle = data.get('vehicle')
     range = 100
-    
-    
-    for index, value in enumerate(vehicle):
-        print(f"Index: {index}, Value: {value}")
-    
+
     # Appel du service SOAP pour effectuer le calcul A + B
     try:
         # Appel du service SOAP pour effectuer le calcul A + B
@@ -106,9 +102,6 @@ def calculate():
 
     # Pass the result to the template
     return jsonify({'result': result})
-
-
-
 
 
 if __name__ == '__main__':
